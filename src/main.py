@@ -2,6 +2,7 @@ from fastapi import Depends, FastAPI
 import uvicorn
 from routers import index
 
+
 app = FastAPI()
 
 
