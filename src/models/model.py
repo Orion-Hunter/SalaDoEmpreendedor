@@ -1,6 +1,5 @@
 from sqlalchemy import Column, Integer, String
-
-from database import Base
+from databases.database import Base
 
 class Servidor(Base):
     __tablename__="servidor"
