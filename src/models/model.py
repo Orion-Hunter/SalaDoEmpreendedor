@@ -8,5 +8,5 @@ class Servidor(Base):
 
     ID_SERVIDOR =  Column(Integer, primary_key=True, index=True)
     NOME =  Column(String(50))
-    SENHA = Column(String(10), unique=True) 
+    SENHA = Column(String(200), unique=True) 
     SECRETARIA = Column(String(50))

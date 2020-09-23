@@ -14,7 +14,7 @@ pymysqldb = "*"
 mysql-connector-python = "*"
 databases = "*"
 alembic = "*"
-pytest = "*"
+bcrypt = "*"
 
 [requires]
 python_version = "3.8"
