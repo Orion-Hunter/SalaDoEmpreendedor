@@ -1,12 +1,14 @@
 from fastapi import Depends, FastAPI
 import uvicorn
-from routers import index, servidores
+from routers import  servidores
 
 
 app = FastAPI()
 
-
-app.include_router(index.router)
+@app.get("/")
+def index():
+    return {"api": "API SSE", "version": "1.0.0"}
+     
 app.include_router(servidores.router)
 
 if __name__ == '__main__':

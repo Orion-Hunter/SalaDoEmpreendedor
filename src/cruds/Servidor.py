@@ -5,12 +5,15 @@ from models import model
 from schemas import schema
 import bcrypt
 
+#Busca um Servidor pelo ID
 def get_servidor(db: Session, id_servidor: int):
       return db.query(model.Servidor).filter(model.Servidor.ID_SERVIDOR == id_servidor).first()
-                
+
+#Retorna todos os servidores cadastrados                
 def get_servidores(db: Session, skip: int = 0, limit: int = 100):
     return db.query(model.Servidor).offset(skip).limit(limit).all()
 
+#Cadastra um servidor
 def create_servidor(db: Session, servidor: schema.ServidorCreate):
         try:
             db_servidor = model.Servidor(NOME=servidor.NOME, SENHA=servidor.SENHA, SECRETARIA=servidor.SECRETARIA)
@@ -20,7 +23,8 @@ def create_servidor(db: Session, servidor: schema.ServidorCreate):
             return db_servidor
         except IntegrityError as e:
             raise HTTPException(status_code=404, detail=" A senha informada não está disponível!")
-             
+ 
+#Exclui um servidor             
 def delete_servidor(db: Session, id_servidor: int):
         db_servidor = get_servidor(db, id_servidor)
         if db_servidor is None:
@@ -30,6 +34,7 @@ def delete_servidor(db: Session, id_servidor: int):
             db.commit()
             return {"id_servidor":  id_servidor ,"mensagem": "Servidor Excluído!"}
 
+#Atualiza um servidor
 def update_servidor(db: Session, id_servidor: int, new_data: schema.ServidorCreate):
         try:
             db_servidor = get_servidor(db, id_servidor=id_servidor)
