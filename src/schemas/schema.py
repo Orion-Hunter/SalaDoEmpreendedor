@@ -1,13 +1,29 @@
 from pydantic import BaseModel
+from typing import Optional
 
-class ServidorBase(BaseModel): 
+class ServidorBase(BaseModel):
      NOME: str
      SENHA: str
      SECRETARIA: str
-
-class ServidorCreate(ServidorBase):
-     pass
+     
+class ServidorCreate(ServidorBase): 
+     SENHA: str
+     SECRETARIA: str
   
+class ServidorInfoBase(BaseModel): 
+     NOME: str
+
+class ServidorAuthenticate(ServidorInfoBase): 
+     SENHA: str  
+
+class Token(BaseModel): 
+     access_token: str
+     token_type: str
+
+class TokenData(BaseModel): 
+     username: Optional[str] = None
+
+      
 class Servidor(ServidorBase):
      ID_SERVIDOR: int
      

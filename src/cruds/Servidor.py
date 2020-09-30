@@ -5,6 +5,7 @@ from models import model
 from schemas import schema
 import bcrypt
 
+    
 #Busca um Servidor pelo ID
 def get_servidor(db: Session, id_servidor: int):
       return db.query(model.Servidor).filter(model.Servidor.ID_SERVIDOR == id_servidor).first()

@@ -1,8 +1,8 @@
-"""Alteraçao Tamanho Senha
+"""migration name
 
-Revision ID: 218b66d920d1
-Revises: 1e0ee008062e
-Create Date: 2020-09-22 09:16:54.901568
+Revision ID: 7232511ddf63
+Revises: b78e28d5d650
+Create Date: 2020-09-30 11:38:25.732773
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '218b66d920d1'
-down_revision = '1e0ee008062e'
+revision = '7232511ddf63'
+down_revision = 'b78e28d5d650'
 branch_labels = None
 depends_on = None
 

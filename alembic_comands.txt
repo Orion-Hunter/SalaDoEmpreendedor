@@ -1,0 +1,7 @@
+Create migration:
+
+alembic revision -m "migration name"
+
+Running a migration:
+
+alembic upgrade head
