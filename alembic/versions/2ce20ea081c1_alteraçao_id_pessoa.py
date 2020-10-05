@@ -1,8 +1,8 @@
-"""Inclusao Tabelas
+"""Alteraçao ID_PESSOA
 
-Revision ID: 73c6a0c0661c
-Revises: 914f2d21b185
-Create Date: 2020-09-30 11:40:40.017316
+Revision ID: 2ce20ea081c1
+Revises: 9e058aa89678
+Create Date: 2020-10-05 11:33:03.943704
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '73c6a0c0661c'
-down_revision = '914f2d21b185'
+revision = '2ce20ea081c1'
+down_revision = '9e058aa89678'
 branch_labels = None
 depends_on = None
 

@@ -24,7 +24,8 @@ fileConfig(config.config_file_name)
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 
-from src.models  import model
+from app.models import  model
+
 
 target_metadata = model.Base.metadata
 
