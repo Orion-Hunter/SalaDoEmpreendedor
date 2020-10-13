@@ -1,8 +1,8 @@
-"""Models
+"""Refactor Atendimento model
 
-Revision ID: 9e058aa89678
-Revises: d683b2c20471
-Create Date: 2020-10-05 11:01:36.704706
+Revision ID: 5f2042d98c3d
+Revises: 
+Create Date: 2020-10-13 10:12:20.895905
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '9e058aa89678'
-down_revision = 'd683b2c20471'
+revision = '5f2042d98c3d'
+down_revision = None
 branch_labels = None
 depends_on = None
 

@@ -14,7 +14,7 @@ def get_procedimentos(db: Session, skip: int = 0, limit: int = 100):
 
 def create_procedimento(db: Session, Procedimento: schema.ProcedimentoCreate):
         try:
-            db_Procedimento = model.Procedimento(NOME_PROCEDIMENTO=Procedimento.NOME_PROCEDIMENTO)
+            db_Procedimento = model.Procedimento(NOME_PROCEDIMENTO=Procedimento.NOME_PROCEDIMENTO, SECRETARIA=Procedimento.SECRETARIA)
             db.add(db_Procedimento)
             db.commit()
             db.refresh(db_Procedimento)

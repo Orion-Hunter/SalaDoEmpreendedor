@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import Optional, List
 from datetime import datetime
 
+####Schemas Servidor
 class ServidorBase(BaseModel):
      MATRICULA: int
      NOME: str
@@ -18,7 +19,7 @@ class Servidor(ServidorBase):
      class Config:
           orm_mode = True   
 
- 
+ ###Schemas pessoa
 class PessoaBase(BaseModel):
     NOME : str
     CIDADE : str
@@ -37,9 +38,10 @@ class Pessoa(PessoaBase):
      class Config: 
           orm_mode = True
  
- 
+ #schema procedimento
 class ProcedimentoBase(BaseModel): 
      NOME_PROCEDIMENTO: str
+     SECRETARIA: str
      
 class ProcedimentoCreate(ProcedimentoBase):
      pass 
@@ -49,7 +51,8 @@ class Procedimento(ProcedimentoBase):
      
      class Config:
           orm_mode = True
-  
+
+##schema atividades
 class AtividadeBase(BaseModel):
      NOME_ATIVIDADE: str
      CNAE: str
@@ -62,15 +65,21 @@ class Atividade(AtividadeBase):
      
      class Config:
           orm_mode = True       
-          
+
+#schema atendimento          
 class AtendimentoBase(BaseModel):
      DATA: datetime
      ID_SERVIDOR: int 
-     SERVIDOR: List[Servidor] 
      ID_PESSOA: int  
-     PESSOA: List[Pessoa] 
      
 class AtendimentoCreate(AtendimentoBase):
-     DATA: datetime
-     
-     
+     ATIVIDADES: List[Atividade]
+     PROCEDIMENTOS: List[Procedimento]
+
+class Atendimento(AtividadeBase):
+       ID_ATENDIMENTO: int 
+       SERVIDOR: Servidor
+       PESSOA: Pessoa
+       
+       class Config:
+            orm_mode= True    

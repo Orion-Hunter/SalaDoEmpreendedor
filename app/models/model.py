@@ -30,6 +30,7 @@ class Procedimento(Base):
     
     ID_PROCEDIMENTO =  Column(Integer, primary_key=True, index=True)
     NOME_PROCEDIMENTO = Column(String(150))
+    SECRETARIA = Column(String(50))
         
 class Atividade(Base):
     __tablename__ = "atividades"
@@ -45,9 +46,7 @@ class Atendimento(Base):
     ID_ATENDIMENTO =  Column(Integer, primary_key=True, index=True)
     DATA = Column(DateTime)
     ID_SERVIDOR = Column(Integer, ForeignKey(Servidor.MATRICULA))
-    SERVIDOR = Column(JSON)
-    ID_PESSOA = Column(Integer, ForeignKey(Pessoa.NUMERO_CADASTRO))  
-    PESSOA = Column(JSON)
+    ID_PESSOA = Column(Integer, ForeignKey(Pessoa.NUMERO_CADASTRO))   
     ATIVIDADES = Column(JSON)
     PROCEDIMENTOS = Column(JSON)
     
